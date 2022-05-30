@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <section class="container">
+        <div class="tabs">
+            <div class="left">
+                <div class="dash-left">
+                    <ul id="tabs-nav">
+                        <li><a href="#tab1">Dashboard</a></li>
+                        <li><a href="#tab2">Update Profile</a></li>
+                        <li><a href="#tab3">Order History</a></li>
+                        <li><a href="#tab4">Change Password</a></li>
+                        <li><a href="#tab5">Logout</a></li>
+                    </ul>
+                </div>              
+            </div>
+           <div id="tabs-content">
+             <div id="tab1" class="tab-content">
+                  <h1>Hello Farzan</h1>
+                  <p>(Not your account? Logout)</p>
+             </div>
+             <div id="tab2" class="tab-content">
+                   <div class="update-profile">
+                       <div class="container">
+                           <h2>Update Profile</h2>
+                           <form id="signUpFormUpdate" novalidate="novalidate">
+                               <div class="input_field">
+                                   <input type="text" value="" name="name" placeholder="Name">
+                               </div>
+                               
+                               <div class="input_field">
+                                   <input type="email" value="" name="email" placeholder="Email">
+                               </div>
+                               
+                               <div class="input_field">
+                                   <input type="tel" maxlength="10" value="" name="mobile" placeholder="Phone Number">
+                               </div>
+                               
+                               <div class="input_field_btn">
+                                   <button type="submit" id="signUpBtnnUpdate" name="signUpBtnnUpdate">Save Changes</button>
+                               </div>
+                               
+                           </form>
+                       </div>  
+                   </div>            
+             </div>
+             <div id="tab3" class="tab-content">
+                   <div class="order-history">
+                       <div class="container">
+                           <h2>Order History</h2>
+                           <table>
+                               <thead>
+                                   <tr>
+                                   <th>S.No.</th>
+                                   <th>Order id</th>
+                                   <th> Total</th>
+                                   <th>Order Date</th>
+                                   
+                                   
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr>
+                                       <td><strong>1</strong></td>
+                                       <td> <a href="# ">ORD000034 </a></td>
+                                       <td>230.00</td>
+                                       <td>25 Jan, 2022 (05:44 pm)</td>
+                                   </tr>
+                                       
+                               </tbody>
+                           </table>
+                       </div>
+                   </div>
+             </div>
+             <div id="tab4" class="tab-content">
+                   <div class="change-password">
+                       <div class="container">
+                           <h2 class="titile">Change Password</h2>
+                           <form id="signUpFormPass" novalidate="novalidate">
+                               <div class="input_field">
+                                   <input type="password" name="oldpass" placeholder="Current Password">
+                               </div>
+                                   
+                               <div class="input_field">
+                                   <input type="password" name="npass" id="newpass" placeholder="New Password">
+                               </div>
+                               
+                               
+                               <div class="input_field">
+                                   <input type="password" name="cpass" placeholder="Confirm Password">
+                               </div>
+                               <div class="input_field_btn">
+                                   <button id="signUpBtnnPass" name="signUpBtnnPass">Change Password</button>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+             </div>
+
+           </div>
+         </div>
+    </section>
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+
+ <script>
+ $('#tabs-nav li:first-child').addClass('active');
+$('.tab-content').hide();
+$('.tab-content:first').show();
+
+// Click function
+$('#tabs-nav li').click(function(){
+  $('#tabs-nav li').removeClass('active');
+  $(this).addClass('active');
+  $('.tab-content').hide();
+  
+  var activeTab = $(this).find('a').attr('href');
+  $(activeTab).fadeIn();
+  return false;
+});
+ </script>
+ 
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  -->
+</body>
+</html>
